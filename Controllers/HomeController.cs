@@ -92,7 +92,7 @@ namespace InfoCut.Controllers
         {
             return View();
         }
-        public IActionResult Sports()
+        public IActionResult Sports()   
         {
             return View();
         }
@@ -126,6 +126,48 @@ namespace InfoCut.Controllers
                 return RedirectToAction("Index");
             }
             return View(user);
+        }
+
+        [HttpGet]
+        public IActionResult EditProfile()
+        {
+            if (HttpContext.Session.GetString("IsLoggedIn") != "true")
+            {
+                return RedirectToAction("Signin");
+            }
+
+            // Replace with actual user lookup logic
+            var user = _context.SignUps.FirstOrDefault();
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "User not found.";
+                return RedirectToAction("Index");
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProfile(int id, string Username, string Email, string NewPassword)
+        {
+            var user = await _context.SignUps.FindAsync(id);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "User not found.";
+                return RedirectToAction("Index");
+            }
+
+            user.Username = Username;
+            user.Email = Email;
+            if (!string.IsNullOrWhiteSpace(NewPassword))
+            {
+                user.password = NewPassword; // Consider hashing in production
+            }
+
+            _context.SignUps.Update(user);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Profile updated successfully!";
+            return RedirectToAction("Profile");
         }
     }
 }

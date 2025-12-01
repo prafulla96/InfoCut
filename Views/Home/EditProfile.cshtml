@@ -1,0 +1,24 @@
+@model InfoCut.Models.SignUp
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<h2>Edit Profile</h2>
+
+<form asp-action="EditProfile" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label>New Password</label>
+        <input type="password" name="NewPassword" />
+    </div>
+    <button type="submit">Save Changes</button>
+</form> 

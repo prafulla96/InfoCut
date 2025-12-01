@@ -1,0 +1,122 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout="_Layout";
+}
+<style>
+    .hero-tech {
+        background: rgba(33, 37, 41, 0.85);
+        color: #fff;
+        padding: 3rem 1rem 2rem 1rem;
+        border-radius: 16px;
+        margin-top: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+
+    .quick-links {
+        background: rgba(255,255,255,0.85);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .tech-category-list {
+        margin: 2rem 0 2.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .tech-news-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        transition: box-shadow 0.2s;
+    }
+
+        .tech-news-card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+    .tech-news-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #2d3a4a;
+    }
+
+    .tech-news-date {
+        font-size: 0.95rem;
+        color: #888;
+        margin-bottom: 0.5rem;
+    }
+</style>
+<!-- Hero Section -->
+<section class="hero-tech container mt-4">
+    <h1 class="display-5 fw-bold">Tech News</h1>
+    <p class="lead">Explore the latest in technology, innovation, gadgets, and science from around the world.</p>
+</section>
+
+<!-- Tech Category Links -->
+<div class="quick-links mt-5">
+    <a href="#ai" class="btn btn-outline-primary rounded-pill">AI & Machine Learning</a>
+    <a href="#gadgets" class="btn btn-outline-primary rounded-pill">Gadgets</a>
+    <a href="#startups" class="btn btn-outline-primary rounded-pill">Startups</a>
+    <a href="#software" class="btn btn-outline-primary rounded-pill">Software</a>
+    <a href="#hardware" class="btn btn-outline-primary rounded-pill">Hardware</a>
+    <a href="#internet" class="btn btn-outline-primary rounded-pill">Internet</a>
+    <a href="#science" class="btn btn-outline-primary rounded-pill">Science</a>
+    <a href="#space" class="btn btn-outline-primary rounded-pill">Space</a>
+</div>
+
+<!-- Tech News Sections -->
+<div class="container">
+    <!-- AI & Machine Learning -->
+    <div id="ai" class="mb-5">
+        <h3 class="mb-3">AI & Machine Learning</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="tech-news-card">
+                    <div class="tech-news-title">Breakthrough in AI Language Models</div>
+                    <div class="tech-news-date">June 30, 2025</div>
+                    <p>Researchers have unveiled a new AI model that surpasses previous benchmarks in language understanding and generation.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="tech-news-card">
+                    <div class="tech-news-title">AI Powers Next-Gen Healthcare Diagnostics</div>
+                    <div class="tech-news-date">June 29, 2025</div>
+                    <p>Hospitals are adopting AI-driven tools to improve diagnostic accuracy and patient outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gadgets -->
+    <div id="gadgets" class="mb-5">
+        <h3 class="mb-3">Gadgets</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="tech-news-card">
+                    <div class="tech-news-title">New Smartphone Sets Pre-Order Records</div>
+                    <div class="tech-news-date">June 28, 2025</div>
+                    <p>The latest smartphone release has broken pre-order records, with consumers eager to experience its innovative features.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="tech-news-card">
+                    <div class="tech-news-title">Wearable Tech Gets Smarter</div>
+                    <div class="tech-news-date">June 27, 2025</div>
+                    <p>Next-generation wearables now offer advanced health monitoring and seamless connectivity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add more categories as needed, following the same structure -->
+</div>
+

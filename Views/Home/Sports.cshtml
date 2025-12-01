@@ -1,0 +1,149 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<style>
+    .hero-sports {
+        background: rgba(33, 37, 41, 0.85);
+        color: #fff;
+        padding: 3rem 1rem 2rem 1rem;
+        border-radius: 16px;
+        margin-top: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+
+    .quick-links {
+        background: rgba(255,255,255,0.85);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .sports-category-list .btn-outline-light {
+        margin: 2rem 0 2.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        color: #fff;
+        border-color: #fff;
+    }
+
+    .sports-news-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        transition: box-shadow 0.2s;
+    }
+
+
+        .sports-news-card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+    .sports-news-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #2d3a4a;
+    }
+
+    .sports-news-date {
+        font-size: 0.95rem;
+        color: #888;
+        margin-bottom: 0.5rem;
+    }
+    
+</style>
+<!-- Hero Section -->
+<section class="hero-sports container mt-4">
+    <h1 class="display-5 fw-bold">Sports News</h1>
+    <p class="lead">Catch up on the latest headlines and updates from the world of sports.</p>
+</section>
+
+<!-- Sports Category Links -->
+<div class="quick-links mt-5">
+    <a href="#football" class="btn btn-outline-primary rounded-pill">Football</a>
+    <a href="#cricket" class="btn btn-outline-primary rounded-pill">Cricket</a>
+    <a href="#tennis" class="btn btn-outline-primary rounded-pill">Tennis</a>
+    <a href="#basketball" class="btn btn-outline-primary rounded-pill">Basketball</a>
+    <a href="#hockey" class="btn btn-outline-primary rounded-pill">Hockey</a>
+    <a href="#athletics" class="btn btn-outline-primary rounded-pill">Athletics</a>
+    <a href="#badminton" class="btn btn-outline-primary rounded-pill">Badminton</a>
+    <a href="#motorsport" class="btn btn-outline-primary rounded-pill">Motorsport</a>
+    <a href="#golf" class="btn btn-outline-primary rounded-pill">Golf</a>
+    <a href="#others" class="btn btn-outline-primary rounded-pill">Other Sports</a>
+</div>
+
+<!-- Sports News Sections -->
+<div class="container">
+    <!-- Football -->
+    <div id="football" class="mb-5">
+        <h3 class="mb-3 text-white">Football</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sports-news-card">
+                    <div class="sports-news-title">National Team Qualifies for World Cup</div>
+                    <div class="sports-news-date">June 30, 2025</div>
+                    <p>The national football team secured their place in the upcoming World Cup after a thrilling victory last night.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="sports-news-card">
+                    <div class="sports-news-title">Star Player Signs Record Deal</div>
+                    <div class="sports-news-date">June 29, 2025</div>
+                    <p>A leading football star has signed a record-breaking contract with a top European club.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cricket -->
+    <div id="cricket" class="mb-5">
+        <h3 class="mb-3 text-white">Cricket</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sports-news-card">
+                    <div class="sports-news-title">India Wins Test Series</div>
+                    <div class="sports-news-date">June 28, 2025</div>
+                    <p>India clinched the Test series 2-1 after a dramatic final day in Mumbai.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="sports-news-card">
+                    <div class="sports-news-title">World Cup Schedule Announced</div>
+                    <div class="sports-news-date">June 27, 2025</div>
+                    <p>The ICC has released the full schedule for the upcoming Cricket World Cup.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tennis -->
+    <div id="tennis" class="mb-5">
+        <h3 class="mb-3 text-white">Tennis</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sports-news-card">
+                    <div class="sports-news-title">Grand Slam Champion Returns</div>
+                    <div class="sports-news-date">June 26, 2025</div>
+                    <p>The reigning champion is set to return to the court after recovering from injury.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="sports-news-card">
+                    <div class="sports-news-title">Rising Star Breaks Into Top 10</div>
+                    <div class="sports-news-date">June 25, 2025</div>
+                    <p>A young tennis player has entered the world’s top 10 rankings for the first time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add more categories as needed, following the same structure -->
+</div>
+
+<!-- Footer (copy from home.html for consistency) -->

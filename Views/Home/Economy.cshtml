@@ -1,0 +1,100 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<style>
+    .hero-economy {
+        background: rgba(33, 37, 41, 0.85);
+        color: #fff;
+        padding: 3rem 1rem 2rem 1rem;
+        border-radius: 16px;
+        margin-top: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+
+    .economy-featured {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .economy-news-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        transition: box-shadow 0.2s;
+    }
+
+        .economy-news-card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+    .economy-news-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #2d3a4a;
+    }
+
+    .economy-news-date {
+        font-size: 0.95rem;
+        color: #888;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="hero-economy container mt-4">
+    <h1 class="display-5 fw-bold">Economy News</h1>
+    <p class="lead">Stay updated with the latest trends, analysis, and headlines from the world of business and economics.</p>
+</section>
+
+<!-- Featured Economy News -->
+<div class="container mt-4">
+    <div class="economy-featured mb-4">
+        <h3 class="mb-2">Global Markets Rally as Economic Data Beats Expectations</h3>
+        <div class="economy-news-date">June 30, 2025</div>
+        <p>
+            Stock markets worldwide surged today after new economic data showed stronger-than-expected growth in major economies. Analysts predict continued momentum if positive trends persist.
+        </p>
+    </div>
+
+    <!-- Economy News Grid -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="economy-news-card">
+                <div class="economy-news-title">Central Banks Signal Interest Rate Pause</div>
+                <div class="economy-news-date">June 29, 2025</div>
+                <p>Major central banks hinted at a pause in interest rate hikes, citing easing inflation and stable job growth.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="economy-news-card">
+                <div class="economy-news-title">Oil Prices Climb Amid Supply Concerns</div>
+                <div class="economy-news-date">June 28, 2025</div>
+                <p>Oil prices rose sharply as geopolitical tensions threatened supply routes, prompting renewed calls for energy diversification.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="economy-news-card">
+                <div class="economy-news-title">Tech Sector Drives Job Creation</div>
+                <div class="economy-news-date">June 27, 2025</div>
+                <p>New data shows the technology sector continues to lead in job creation, boosting overall economic growth.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="economy-news-card">
+                <div class="economy-news-title">Emerging Markets Attract Record Investments</div>
+                <div class="economy-news-date">June 26, 2025</div>
+                <p>Investors are pouring funds into emerging markets, drawn by strong growth prospects and favorable policies.</p>
+            </div>
+        </div>
+    </div>
+</div>
+

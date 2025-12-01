@@ -1,0 +1,153 @@
+﻿    <!DOCTYPE html>
+     
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Infocut</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Infocut provides daily updates, top news, and essential information for New Delhi and beyond. Stay informed with the latest trends, weather, and more.">
+    <meta name="keywords" content="Infocut, news, daily updates, New Delhi, weather, information, top 10, trending, contact, about">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Css/mystyle.css">
+    <link rel="icon" href="/Images/IC.jpg" size="16*16">  
+    <base href="~/Images/"/>
+    
+ <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
+           
+        }
+        .navbar-nav .nav-link,
+        .navbar-toggler {
+           color:rgb(95, 95, 95) !important;
+           
+             
+      }
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link:focus,
+    .navbar-nav .nav-link:hover {
+        color: black !important;
+      
+    }
+       
+        .navbar-brand img {
+            margin-right: 8px;
+        }
+        .hero-section {
+            text-align: center;
+            color: #fff;
+            padding: 4rem 1rem 2rem 1rem;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+        }
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+        }
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        .carousel {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .quick-links {
+            background: rgba(255,255,255,0.85);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .quick-links .btn {
+            min-width: 150px;
+            margin: 0.5rem;
+        }
+        footer {
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            margin-top: 3rem;
+        }
+ </style>
+</head>
+<body>
+   
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light bg-transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-white" href="home.html">
+                <img src="/Images/IC.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
+                INFO CUT
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/Home/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/ContactUs">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/DailyUpdates">Daily Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary rounded-pill ms-2" type="button" onclick="window.location.href='/Home/Signin'">Sign In</button>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+      
+    <div>
+        @RenderBody()
+    </div>
+   
+ <footer class="footer mt-5 text-center">
+        <div class="mb-3">
+        <!-- Facebook SVG -->
+        <a href="https://facebook.com/" target="_blank" class="mx-2" aria-label="Facebook">
+            <img src="/Images/facebook.svg" width="28" height="28" alt="Facebook" style="filter: invert(1);" />
+        </a>
+        <!-- Instagram SVG from Images folder -->
+        <a href="https://instagram.com/" target="_blank" class="mx-2" aria-label="Instagram">
+            <img src="/Images/insta.svg" width="28" height="28" alt="Instagram" style="filter: invert(1);" />
+        </a>
+        <a href="https://youtube.com/" target="_blank" class="mx-2" aria-label="YouTube">
+            <img src="/Images/youtube.svg" width="28" height="28" alt="YouTube" style="filter: invert(1);" />
+        </a>
+        </div>
+        <div class="quick-links mb-3">
+            <a class="btn btn-outline-secondary" href="/Home/Index">Home</a>
+            <a class="btn btn-outline-secondary" href="/Home/About">About</a>
+            <a class="btn btn-outline-secondary" href="/Home/ContactUs">Contact Us</a>
+            <a class="btn btn-outline-secondary" href="/Home/DailyUpdates">Daily Updates</a>
+            <a class="btn btn-outline-secondary" href="/Home/Privacy">Privacy Policy</a>
+            <a class="btn btn-outline-secondary" href="/Home/Terms">Terms of Service</a>
+        </div>
+        
+        <p>Email: <a href="mailto:mail@Infocut.com" class="text-white">mail@Infocut.com</a></p>
+        <p>&copy;  @DateTime.Now.Year  INFO CUT. All rights reserved.</p>
+        
+    </footer>
+  
+</body>
+</html>

@@ -1,0 +1,283 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<style>
+    .container {
+        background: rgba(255,255,255,0.90);
+        border-radius: 16px;
+        padding: 2rem;
+        max-width: 700px;
+        margin-top: 5rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+
+    .category-list .btn {
+        min-width: 250px;
+        margin: 0.5rem;
+    }
+
+    .category-title {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Top 10 Categories</h2>
+    <div class="category-list d-flex flex-wrap justify-content-center">
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="economies-btn">Top 10 Largest Economies</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="powerful-countries-btn">Top 10 Most Powerful Countries</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="populous-countries-btn">Top 10 Most Populous Countries</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="tech-companies-btn">Top 10 Fastest Growing Tech Companies</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="richest-ppl-btn">Top 10 Richest People</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="visited-city-btn">Top 10 Most Visited Cities</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="universities-btn">Top 10 Universities in the World</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="sports-teams-btn">Top 10 Sports Teams</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="innovations-btn">Top 10 Innovations of the Year</a>
+        <a href="#" class="btn btn-outline-primary rounded-pill" id="defence-forces-btn">Top 10 Defence Forces</a>
+    </div>
+    <div class="mt-5 text-center">
+        <p>Click a category to explore detailed Top 10 lists curated by INFO CUT.</p>
+    </div>
+</div>
+<div class="container mt-5">
+    <div id="economies-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Largest Economies in the World (by nominal GDP, 2024)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>United States</strong> – $28.78 trillion</li>
+            <li><strong>China</strong> – $18.53 trillion</li>
+            <li><strong>Japan</strong> – $4.38 trillion</li>
+            <li><strong>Germany</strong> – $4.63 trillion</li>
+            <li><strong>India</strong> – $4.11 trillion</li>
+            <li><strong>United Kingdom</strong> – $3.59 trillion</li>
+            <li><strong>France</strong> – $3.13 trillion</li>
+            <li><strong>Italy</strong> – $2.26 trillion</li>
+            <li><strong>Brazil</strong> – $2.13 trillion</li>
+            <li><strong>Canada</strong> – $2.12 trillion</li>
+        </ol>
+        <p class="text-muted">Source: IMF World Economic Outlook, 2024</p>
+    </div>
+    <div id="powerful-countries-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Most Powerful Countries in the World (2025)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>United States</strong></li>
+            <li><strong>China</strong></li>
+            <li><strong>Russia</strong></li>
+            <li><strong>India</strong></li>
+            <li><strong>United Kingdom</strong></li>
+            <li><strong>France</strong></li>
+            <li><strong>Germany</strong></li>
+            <li><strong>Japan</strong></li>
+            <li><strong>South Korea</strong></li>
+            <li><strong>Saudi Arabia</strong></li>
+        </ol>
+        <p class="text-muted">Source: Global Firepower, IMF, and international rankings, 2025</p>
+    </div>
+
+<div id="populous-countries-content" class="mt-4" style="display:none;">
+    <h4 class="category-title mb-3">Top 10 Most Populous Countries in the World (2024)</h4>
+    <ol class="text-start mx-auto" style="max-width:400px;">
+        <li><strong>China</strong> – 1,409 million</li>
+        <li><strong>India</strong> – 1,404 million</li>
+        <li><strong>United States</strong> – 335 million</li>
+        <li><strong>Indonesia</strong> – 279 million</li>
+        <li><strong>Pakistan</strong> – 242 million</li>
+        <li><strong>Nigeria</strong> – 229 million</li>
+        <li><strong>Brazil</strong> – 216 million</li>
+        <li><strong>Bangladesh</strong> – 172 million</li>
+        <li><strong>Russia</strong> – 144 million</li>
+        <li><strong>Mexico</strong> – 129 million</li>
+    </ol>
+    <p class="text-muted">Source: United Nations World Population Prospects, 2024</p>
+</div>
+    <div id="tech-companies-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Fastest Growing Tech Companies in the World (2024)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>Nvidia</strong> – AI & Semiconductors</li>
+            <li><strong>OpenAI</strong> – Artificial Intelligence</li>
+            <li><strong>ByteDance</strong> – Social Media & AI</li>
+            <li><strong>Snowflake</strong> – Cloud Data Platforms</li>
+            <li><strong>Palantir Technologies</strong> – Big Data Analytics</li>
+            <li><strong>Databricks</strong> – Data Engineering & AI</li>
+            <li><strong>Stripe</strong> – Fintech & Payments</li>
+            <li><strong>UiPath</strong> – Robotic Process Automation</li>
+            <li><strong>Sea Group</strong> – E-commerce & Digital Entertainment</li>
+            <li><strong>Shopify</strong> – E-commerce Platforms</li>
+        </ol>
+        <p class="text-muted">Source: Forbes, CB Insights, and industry growth reports, 2024</p>
+    </div>
+    <div id="richest-people-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Richest People in the World (2025)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>Elon Musk</strong> – $230 billion</li>
+            <li><strong>Bernard Arnault & family</strong> – $210 billion</li>
+            <li><strong>Jeff Bezos</strong> – $195 billion</li>
+            <li><strong>Mark Zuckerberg</strong> – $170 billion</li>
+            <li><strong>Larry Ellison</strong> – $155 billion</li>
+            <li><strong>Bill Gates</strong> – $135 billion</li>
+            <li><strong>Warren Buffett</strong> – $130 billion</li>
+            <li><strong>Larry Page</strong> – $125 billion</li>
+            <li><strong>Sergey Brin</strong> – $120 billion</li>
+            <li><strong>Steve Ballmer</strong> – $115 billion</li>
+        </ol>
+        <p class="text-muted">Source: Forbes Real-Time Billionaires List, 2025</p>
+    </div>
+    <div id="visited-city-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Most Visited Cities in the World (2024)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>Bangkok, Thailand</strong> – 22.8 million visitors</li>
+            <li><strong>Paris, France</strong> – 19.1 million visitors</li>
+            <li><strong>London, United Kingdom</strong> – 19.0 million visitors</li>
+            <li><strong>Dubai, UAE</strong> – 15.9 million visitors</li>
+            <li><strong>Singapore</strong> – 14.7 million visitors</li>
+            <li><strong>Kuala Lumpur, Malaysia</strong> – 13.8 million visitors</li>
+            <li><strong>New York City, USA</strong> – 13.6 million visitors</li>
+            <li><strong>Istanbul, Turkey</strong> – 13.4 million visitors</li>
+            <li><strong>Tokyo, Japan</strong> – 12.9 million visitors</li>
+            <li><strong>Antalya, Turkey</strong> – 12.4 million visitors</li>
+        </ol>
+        <p class="text-muted">Source: Mastercard Global Destination Cities Index, 2024</p>
+    </div>
+    <div id="universities-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Universities in the World (2024)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>Massachusetts Institute of Technology (MIT)</strong> – United States</li>
+            <li><strong>Stanford University</strong> – United States</li>
+            <li><strong>University of Cambridge</strong> – United Kingdom</li>
+            <li><strong>University of Oxford</strong> – United Kingdom</li>
+            <li><strong>Harvard University</strong> – United States</li>
+            <li><strong>California Institute of Technology (Caltech)</strong> – United States</li>
+            <li><strong>Imperial College London</strong> – United Kingdom</li>
+            <li><strong>University College London (UCL)</strong> – United Kingdom</li>
+            <li><strong>ETH Zurich</strong> – Switzerland</li>
+            <li><strong>University of Chicago</strong> – United States</li>
+        </ol>
+        <p class="text-muted">Source: QS World University Rankings 2024</p>
+    </div>
+    <div id="sports-teams-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Sports Teams in the World (2024)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>Real Madrid CF</strong> – Soccer (Spain)</li>
+            <li><strong>Dallas Cowboys</strong> – American Football (USA)</li>
+            <li><strong>Manchester United FC</strong> – Soccer (England)</li>
+            <li><strong>New York Yankees</strong> – Baseball (USA)</li>
+            <li><strong>FC Barcelona</strong> – Soccer (Spain)</li>
+            <li><strong>New England Patriots</strong> – American Football (USA)</li>
+            <li><strong>Los Angeles Lakers</strong> – Basketball (USA)</li>
+            <li><strong>Golden State Warriors</strong> – Basketball (USA)</li>
+            <li><strong>Bayern Munich</strong> – Soccer (Germany)</li>
+            <li><strong>Paris Saint-Germain (PSG)</strong> – Soccer (France)</li>
+        </ol>
+        <p class="text-muted">Source: Forbes, ESPN, and global rankings, 2024</p>
+    </div>
+    <div id="innovations-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Innovations of the Year (2024)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>Generative AI Models (e.g., GPT-4, Gemini)</strong> – Advanced natural language and multimodal AI</li>
+            <li><strong>CRISPR Gene Editing Therapies</strong> – Breakthroughs in genetic disease treatment</li>
+            <li><strong>Solid-State Batteries</strong> – Safer, higher-capacity batteries for EVs</li>
+            <li><strong>Quantum Computing Advances</strong> – Practical quantum processors and cloud access</li>
+            <li><strong>Fusion Energy Milestones</strong> – Net energy gain in fusion reactors</li>
+            <li><strong>Wearable Health Tech</strong> – Continuous glucose monitors, smartwatches with ECG</li>
+            <li><strong>3D-Printed Organs and Tissues</strong> – Bioprinting for transplants and research</li>
+            <li><strong>Autonomous Delivery Robots and Drones</strong> – Widespread use in logistics and retail</li>
+            <li><strong>Green Hydrogen Production</strong> – Scalable, clean hydrogen for industry and transport</li>
+            <li><strong>Augmented Reality (AR) Devices</strong> – Next-gen AR glasses and mixed reality platforms</li>
+        </ol>
+        <p class="text-muted">Source: MIT Technology Review, TIME Best Inventions, and industry reports, 2024</p>
+    </div>
+    <div id="defence-forces-content" class="mt-4" style="display:none;">
+        <h4 class="category-title mb-3">Top 10 Defence Forces in the World (2024)</h4>
+        <ol class="text-start mx-auto" style="max-width:400px;">
+            <li><strong>United States Armed Forces</strong> – Largest defense budget, global reach, advanced technology</li>
+            <li><strong>People's Liberation Army (China)</strong> – Largest active personnel, rapid modernization</li>
+            <li><strong>Russian Armed Forces</strong> – Large nuclear arsenal, significant global influence</li>
+            <li><strong>Indian Armed Forces</strong> – Large manpower, growing technology and modernization</li>
+            <li><strong>United Kingdom Armed Forces</strong> – Advanced navy and air force, global presence</li>
+            <li><strong>French Armed Forces</strong> – Nuclear power, advanced technology, global deployments</li>
+            <li><strong>South Korean Armed Forces</strong> – Highly trained, advanced technology, regional strength</li>
+            <li><strong>Japan Self-Defense Forces</strong> – Advanced technology, strong navy and air force</li>
+            <li><strong>Pakistan Armed Forces</strong> – Large manpower, nuclear capability</li>
+            <li><strong>Turkish Armed Forces</strong> – Large standing army, regional influence</li>
+        </ol>
+        <p class="text-muted">Source: Global Firepower Index, 2024</p>
+    </div>
+
+</div>
+<script>
+
+        // List all your content section IDs here
+        const contentSections = [
+            'economies-content',
+            'powerful-countries-content',
+            'populous-countries-content',
+            'tech-companies-content',
+             'richest-people-content',
+             'visited-city-content',
+             'universities-content',
+             'sports-teams-btn',
+             'innovations-content',
+             'defence-forces-content'
+            // Add more IDs as you add more categories
+        ];
+
+        function showCategoryContent(id) {
+            // Hide all sections
+            contentSections.forEach(sectionId => {
+                document.getElementById(sectionId).style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(id).style.display = 'block';
+            document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+        }
+
+        document.getElementById('economies-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('economies-content');
+        });
+
+        document.getElementById('powerful-countries-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('powerful-countries-content');
+        });
+         document.getElementById('populous-countries-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('populous-countries-content');
+        });
+         document.getElementById('tech-companies-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('tech-companies-content');
+        });
+         document.getElementById('richest-ppl-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('richest-people-content');
+        });
+         document.getElementById('richest-ppl-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('richest-people-content');
+        });
+         document.getElementById('visited-city-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('visited-city-content');
+        });
+         document.getElementById('universities-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('universities-content');
+        });
+         document.getElementById('sports-teams-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('sports-teams-content');
+        });
+         document.getElementById('innovations-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            showCategoryContent('innovations-content');
+        });
+         document.getElementById('defence-forces-btn').addEventListener('click', function(e) {
+         e.preventDefault();
+            showCategoryContent('defence-forces-content');
+        });
+    // Show economies content when button is clicked
+</script>

@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<style>
+    .container {
+        background: rgba(255,255,255,0.85);
+        border-radius: 16px;
+        padding: 2rem;
+        max-width: 600px;
+        margin-top: 5rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+</style>
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Contact Us</h2>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label fw-bold">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary rounded-pill">Send Message</button>
+    </form>
+    <div class="mt-4 text-center">
+        <p>Or email us directly at <a href="mailto:mail@Infocut.com">mail@Infocut.com</a></p>
+        
+    </div>
+</div>

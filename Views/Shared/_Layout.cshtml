@@ -1,5 +1,5 @@
-﻿    <!DOCTYPE html>
-     
+﻿<!DOCTYPE html>         
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width"/>
@@ -82,26 +82,43 @@
 <body>
    
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-light bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold text-white" href="home.html">
-                <img src="/Images/IC.jpg" width="50" height="50" class="d-inline-block align-top" alt="">
-                INFO CUT
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <strong>InfoCut</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/Home/Index">Home</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/ContactUs">Contact Us</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/About">About</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="ContactUs">Contact</a>
                     </li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle"></i> @User.Identity.Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="DailyUpdates">
+                                        <i class="bi bi-newspaper"></i> Daily Updates
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="bi bi-box-arrow-right"></i> Logout
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/DailyUpdates">Daily Updates</a>
                     </li>

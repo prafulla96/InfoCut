@@ -1,0 +1,213 @@
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using InfoCut.Data;
+using InfoCut.Models;
+using System.ComponentModel.DataAnnotations;
+
+namespace InfoCut.Controllers
+{
+    public class AccountController : Controller
+    {
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ApplicationDbContext _context;
+        private readonly ILogger<AccountController> _logger;
+
+        public AccountController(
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
+            ApplicationDbContext context,
+            ILogger<AccountController> logger)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _context = context;
+            _logger = logger;
+        }
+
+        // GET: Account/Signup
+        [HttpGet]
+        public IActionResult Signup()
+        {
+            return View(new SignUp());
+        }
+
+        // POST: Account/Signup
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Signup(SignUp model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // Create Identity User with email
+                    var identityUser = new IdentityUser
+                    {
+                        UserName = model.Email,
+                        Email = model.Email,
+                        PhoneNumber = model.phonenumber
+                    };
+
+                    // Create user with hashed password
+                    var result = await _userManager.CreateAsync(identityUser, model.password);
+
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation($"New user {model.Email} registered successfully");
+
+                        // Save additional signup info to SignUps table
+                        if (int.TryParse(identityUser.Id, out var parsedId))
+                        {
+                            model.id = parsedId;
+                        }
+                        else
+                        {
+                            // Handle the case where the Id is not an int (e.g., log or set to a default value)
+                            model.id = 0;
+                        }
+                        
+                        _context.SignUps.Add(model);
+                        await _context.SaveChangesAsync();
+
+                        // Sign in the user immediately after registration
+                        await _signInManager.SignInAsync(identityUser, isPersistent: false);
+
+                        TempData["SuccessMessage"] = $"Welcome {model.Username}! Your account has been created successfully.";
+                        _logger.LogInformation($"User {model.Email} signed in automatically after registration");
+
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                    // Handle Identity errors
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                        _logger.LogWarning($"Error creating user {model.Email}: {error.Description}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Exception during signup for {model.Email}");
+                    ModelState.AddModelError(string.Empty, "An error occurred during registration. Please try again.");
+                }
+            }
+            else
+            {
+                // Log validation errors
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    _logger.LogWarning($"Validation error: {error.ErrorMessage}");
+                }
+            }
+
+            return View(model);
+        }
+
+        // GET: Account/Register (Alternative endpoint)
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return RedirectToAction("Signup");
+        }
+
+        // GET: Account/Login
+        [HttpGet]
+        public IActionResult Login(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        // POST: Account/Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var result = await _signInManager.PasswordSignInAsync(
+                        model.Email,
+                        model.Password,
+                        model.RememberMe,
+                        lockoutOnFailure: true);
+
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation($"User {model.Email} logged in successfully");
+
+                        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                        {
+                            return Redirect(returnUrl);
+                        }
+
+                        TempData["SuccessMessage"] = "Welcome back! You are now logged in.";
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                    if (result.IsLockedOut)
+                    {
+                        _logger.LogWarning($"User account {model.Email} locked out");
+                        ModelState.AddModelError(string.Empty,
+                            "Account locked due to too many failed login attempts. Please try again after 5 minutes.");
+                        return View(model);
+                    }
+
+                    if (result.RequiresTwoFactor)
+                    {
+                        return RedirectToAction("LoginWith2fa", new { returnUrl });
+                    }
+
+                    ModelState.AddModelError(string.Empty, "Invalid email or password. Please try again.");
+                    _logger.LogWarning($"Failed login attempt for user {model.Email}");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, $"Exception during login for {model.Email}");
+                    ModelState.AddModelError(string.Empty, "An error occurred during login. Please try again.");
+                }
+            }
+
+            return View(model);
+        }
+
+        // POST: Account/Logout
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation("User logged out");
+            TempData["SuccessMessage"] = "You have been logged out successfully.";
+            return RedirectToAction("Index", "Home");
+        }
+
+        // GET: Account/AccessDenied
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+    }
+
+    // View Models
+    public class LoginViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email Address")]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
+    }
+                                                                                                                    }
